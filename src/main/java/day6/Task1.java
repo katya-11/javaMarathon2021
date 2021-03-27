@@ -9,12 +9,7 @@ public class Task1 {
         car.info();
         motorbike.info();
 
-
         System.out.println("Разница между переданным годом и годом выпуска автомобиля = " + car.yearDifference( 2021));
         System.out.println("Разница между переданным годом и годом выпуска мотоцикла = " + motorbike.yearDifference(2019));
-
-
-
-
     }
 }

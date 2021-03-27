@@ -15,7 +15,6 @@ public class Airplane {
         fuel = 0;
     }
 
-
     public void setProducer(String producer) {
         this.producer = producer;
     }
