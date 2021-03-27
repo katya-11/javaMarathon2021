@@ -1,17 +1,17 @@
 package day5;
 
-public class Motobike {
-    private int year;
+public class Motorbike {
     private String model;
     private String color;
+    private int year;
 
-    public Motobike(int year, String model, String color) {
+    public Motorbike(String model, String color, int year) {
         this.year = year;
         this.model = model;
         this.color = color;
     }
 
-    public Motobike(int year, String model) {
+    public Motorbike(String model, int year) {
         this.year = year;
         this.model = model;
         this.color = "Цвет не задан";
