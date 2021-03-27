@@ -11,7 +11,12 @@ public class Task1 {
 
         Car car1 = new Car();
         System.out.println("Введи год выпуска авто");
-        car1.setYear(Integer.parseInt(reader.readLine()));
+        try{
+            car1.setYear(Integer.parseInt(reader.readLine()));
+        }
+        catch (NumberFormatException e) {
+            System.out.println("Год должен содержать только цифры");
+        }
 
         System.out.println("Введи модель авто");
         car1.setModel(reader.readLine());
