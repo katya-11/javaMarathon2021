@@ -31,7 +31,6 @@ public class Teacher {
         final int min = 2;
         final int max = 5;
         final int rnd = rnd(min, max);
-        int evaluation = rnd;
         String evaluationText = "";
         switch (rnd) {
             case 5:
