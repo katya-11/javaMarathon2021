@@ -47,7 +47,7 @@ public class Car {
 
     public int yearDifference(int inputYear) {
         int diff = this.year - inputYear;
-        return diff;
+        return Math.abs(diff);
     }
 
 

@@ -35,11 +35,6 @@ public class Motorbike {
 
     public int yearDifference(int inputYear) {
         int diff = this.year - inputYear;
-        if (diff < 0) {
-            System.out.println("Проверьте переданный год и год выпуска мотоцикла");
-            return diff;
-        }
-        return diff;
-
+        return Math.abs(diff);
     }
 }

@@ -28,9 +28,10 @@ public class Teacher {
     }
 
     public void evaluate(String studentName) {
-        final int min = 2;
-        final int max = 5;
-        final int rnd = rnd(min, max);
+        int min = 2;
+        int max = 5;
+        max -= min;
+        int rnd = (int) (Math.random() * ++max) + min;
         String evaluationText = "";
         switch (rnd) {
             case 5:
@@ -42,15 +43,10 @@ public class Teacher {
             case 3:
                 evaluationText = "удовлетворительно";
                 break;
-            case 2: case 1: case 0:
+            case 2:
                 evaluationText = "неудовлетворительно";
                 break;
         }
         System.out.println("Преподаватель " + this.name + " оценил студента с именем " + studentName + " по предмету '" + this.subject + "' на оценку '" + evaluationText + "'");
-    }
-
-    public int rnd(int min, int max) {
-        max -= min;
-        return (int) (Math.random() * ++max) + min;
     }
 }
