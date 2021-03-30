@@ -25,14 +25,13 @@ public class Player {
     }
 
     public void run() {
-        while (stamina > MIN_STAMINA) {
-            stamina--;
+        if (stamina == MIN_STAMINA) {
+            return;}
+        stamina--;
             if (stamina == MIN_STAMINA) {
                 countPlayers--;
             }
-            break;
         }
-    }
 
     public static void info() {
         if (countPlayers < 6) {
