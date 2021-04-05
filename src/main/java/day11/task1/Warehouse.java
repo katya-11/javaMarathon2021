@@ -14,7 +14,15 @@ public class Warehouse {
 
     @Override
     public String toString() {
-        return "количество собранных заказов= " + countPickedOrders +
-                ", количество доставленных заказов= " + countDeliveredOrders;
+        return "количество собранных заказов= " + getCountPickedOrders() +
+                ", количество доставленных заказов= " + getCountDeliveredOrders();
+    }
+
+    public void setCountPickedOrders(int countPickedOrders) {
+        this.countPickedOrders = countPickedOrders;
+    }
+
+    public void setCountDeliveredOrders(int countDeliveredOrders) {
+        this.countDeliveredOrders = countDeliveredOrders;
     }
 }
