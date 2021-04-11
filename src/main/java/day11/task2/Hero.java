@@ -1,13 +1,13 @@
 package day11.task2;
 
 public abstract class Hero {
-    private double health;
-    private double physDef;
-    private double magicDef;
+    double health;
+    int physAtt;
+    double physDef;
+    double magicDef;
 
-
-    public double getHealth() {
-        return health;
+    public Hero() {
+        this.health = 100;
     }
 
     public double getPhysDef() {
@@ -18,7 +18,27 @@ public abstract class Hero {
         return magicDef;
     }
 
-    public void setHealth(double health) {
-        this.health = health;
+    public double getHealth() {
+        return health;
     }
+
+    public int getPhysAtt() {
+        return physAtt;
+    }
+
+    public void setHealth(double health) {
+        if (health < 0) {
+            this.health = 0;
+        } else if (health > 100) {
+            this.health = 100;
+        } else
+            this.health = health;
+    }
+
+    public void physicalAttack(Hero hero) {
+        double heroHealth = hero.getHealth() - (this.getPhysAtt() -
+                this.getPhysAtt() * hero.getPhysDef());
+        hero.setHealth(heroHealth);
+    }
+
 }
