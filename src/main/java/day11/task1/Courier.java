@@ -3,9 +3,8 @@ package day11.task1;
 public class Courier implements Worker {
     private double salary;
     private boolean isPayed;
-    private int countDeliveredOrders;
-    private Warehouse warehouse;
-
+    private Warehouse warehouse = new Warehouse();
+    private int countDeliveredOrders = warehouse.getCountDeliveredOrders();
 
     public Courier(Warehouse warehouse) {
         this.warehouse = warehouse;

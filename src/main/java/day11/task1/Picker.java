@@ -3,8 +3,8 @@ package day11.task1;
 public class Picker implements Worker {
     private double salary;
     private boolean isPayed;
-    private int countPickedOrders;
-    private Warehouse warehouse;
+    private Warehouse warehouse = new Warehouse();
+    private int countPickedOrders = warehouse.getCountPickedOrders();
 
 
     public Picker(Warehouse warehouse) {
