@@ -24,13 +24,13 @@ public class User {
         this.subscriptions.add(user);
     }
 
-    public boolean isSubscriber(User user) {
+    public boolean isSubscribed(User user) {
         return this.subscriptions.contains(user);
     }
 
     public boolean isFriend(User user) {
-        return isSubscriber(user) &&
-                user.isSubscriber(this);
+        return isSubscribed(user) &&
+                user.isSubscribed(this);
     }
 
     public void sendMessage(User user, String text) {
