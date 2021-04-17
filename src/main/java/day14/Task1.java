@@ -2,9 +2,6 @@ package day14;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 public class Task1 {
@@ -17,30 +14,29 @@ public class Task1 {
     public static void printSumDigits(File file) {
         try (Scanner scanner = new Scanner(file)) {
             int sum = 0;
-            List<String> num = new ArrayList<>();
-            while (scanner.hasNextLine()) {
+            int arrayLength = 0;
+
+            while (scanner.hasNextInt()) {
                 String line = scanner.nextLine();
                 String[] numberS = line.split(" ");
-                num.addAll(Arrays.asList(numberS));
-            }
+                arrayLength += numberS.length;
 
-            try {
-                String[] numbersCopy = new String[10];
-                for (int i = 0; i < num.size(); i++) {
-                    numbersCopy[i] = num.get(i);
-                }
-
-                for (String s : numbersCopy) {
+                for (String s : numberS) {
                     sum += Integer.parseInt(s);
                 }
-                System.out.println(sum);
-            } catch (Exception e) {
-                System.out.println("Некорректный входной файл");
             }
+
+            if (arrayLength != 10) {
+                throw new ArrayLengthException();
+            }
+
+            System.out.println(sum);
 
         } catch (FileNotFoundException e) {
             System.out.println("Файл не найден");
 
+        } catch (ArrayLengthException exception) {
+            System.out.println("Некорректный входной файл");
         }
     }
 }
